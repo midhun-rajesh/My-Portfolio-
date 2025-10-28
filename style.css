@@ -1,0 +1,639 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Default text color (blackish) */
+    background-color: #F8F8F8; /* Light gray/white background */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* General Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff; /* A nice blue accent */
+}
+
+.light-blue-bg {
+    background-color: #E0F2F7; /* Light blue background for alternate sections */
+}
+
+.light-blue-box {
+    background-color: #E0F2F7; /* Light blue for boxes */
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-logo {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #007bff; /* Blue logo */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-logo:hover {
+    color: #0056b3;
+}
+
+/* Icon Buttons (Circular) */
+.icon-button.circle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it circular */
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.icon-button.circle-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Mobile Nav Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* This .open class is added by JavaScript */
+.mobile-nav-overlay.open {
+    transform: translateX(0); /* Slide in */
+}
+
+.close-nav-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #0056b3; /* Red for close button */
+}
+.close-nav-btn:hover {
+    background-color: #0000ff;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px; /* Space from close button */
+    text-align: center;
+}
+
+.mobile-nav-list li {
+    margin-bottom: 25px;
+}
+
+.mobile-nav-list a {
+    font-size: 1.8em;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.mobile-nav-list a:hover {
+    color: #007bff;
+}
+
+.mobile-nav-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.mobile-nav-socials .circle-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    margin: 0; /* Override default margin */
+}
+
+.mobile-nav-contact-info {
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+.mobile-nav-contact-info p {
+    margin: 10px 0;
+}
+.mobile-nav-contact-info .fas {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Space for fixed navbar */
+    background-color: #F0F8FF; /* Light blue-white background */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-greeting {
+    font-size: 3em; /* Larger font */
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.highlight-name {
+    color: #007bff; /* Blue for your name */
+}
+
+.hero-title {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 0; 
+    overflow: hidden;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-social-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+}
+
+.resume-button {
+    background-color: #28a745; /* Green for resume */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.resume-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+
+/* About Me Section */
+.bio-text {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.education-box {
+    text-align: left;
+    margin-top: 40px;
+}
+
+.education-box h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.education-box ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.education-box li {
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card {
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: #0056b3;
+}
+
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-category h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.skill-category li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.skill-category li::before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+}
+
+
+/* Contact Information Section */
+.contact-info-block {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info-block p {
+    font-size: 1.1em;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info-block .contact-icon {
+    margin-right: 15px;
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.contact-info-block a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info-block a:hover {
+    color: #0056b3;
+}
+
+.contact-social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-icon {
+    background-color: #555;
+    color: white;
+}
+
+.footer-icon:hover {
+    background-color: #777;
+}
+
+/* Go-To-Top Button */
+.go-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s, transform 0.2s;
+}
+
+.go-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.go-to-top-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-logo {
+        font-size: 1.5em;
+    }
+
+    .hero-greeting {
+        font-size: 2.2em;
+    }
+
+    .hero-title {
+        font-size: 1.2em;
+    }
+
+    .profile-image-container {
+    width: 100%;        
+    height: auto;        
+    aspect-ratio: 1 / 1; 
+}
+
+    }
+
+    .resume-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .project-grid, .skills-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    .go-to-top-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+
+/* ====================================================== */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* This is the new card style */
+.course-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Style for the provider logo (e.g., Coursera, Udemy) */
+.course-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee; /* Light border for white logos */
+}
+
+/* Card Title */
+.course-card h3 {
+    font-size: 1.4rem;
+    color: #333; /* Darker text */
+    margin: 0 0 8px 0;
+}
+
+/* "Issued by: ..." text */
+.course-card .issuer {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+
+/* Card Description */
+.course-card .description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    flex-grow: 1; /* Pushes the button to the bottom */
+    margin-bottom: 25px;
+}
+
+/* "View Certificate" Link */
+.course-card .course-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff; /* Uses your existing blue */
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Aligns button to the bottom */
+}
+
+.course-card .course-link:hover {
+    background-color: #0056b3; /* Uses your existing hover blue */
+}
+
+.course-link i {
+    margin-left: 8px;
+    font-size: 0.8em;
+}
+
+/* This overrides the .project-grid media query just for courses */
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
